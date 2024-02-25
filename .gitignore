@@ -3,3 +3,4 @@ my-flask/pybo.db
 *.pyc
 my-flask/__pycache__/
 my-flask/migrations/
+logs
