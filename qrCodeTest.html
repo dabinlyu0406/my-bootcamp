@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your QR Code</title>
+</head>
+<body>
+  <h1>Your QR Code:</h1>
+  <p>Thank you for submitting the form. Below is your unique QR code:</p>
+  <img id="qrCode" src="" alt="QR Code" style="width:200px; height:200px;">
+  
+  <script>
+    // URL 파라미터에서 QR 코드 URL을 가져옵니다.
+    const urlParams = new URLSearchParams(window.location.search);
+    const qrUrl = urlParams.get('qrUrl');
+    
+    if (qrUrl) {
+      // QR 코드 이미지를 설정합니다.
+      document.getElementById('qrCode').src = decodeURIComponent(qrUrl);
+    } else {
+      document.body.innerHTML = '<h2>QR Code could not be generated. Please try again later.</h2>';
+    }
+  </script>
+</body>
+</html>
